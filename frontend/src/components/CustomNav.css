@@ -1,0 +1,72 @@
+.custom-navbar .navbar-brand img {
+  margin-right: 10px;
+  width: 95px;
+  height: 80px;
+}
+
+.custom-navbar {
+  background-color: black;
+  border-bottom: none;
+}
+
+.custom-navbar .nav-link {
+  color: #fff; /* White text color */
+  margin-right: 15px; /* Space between links */
+  padding: 0.5rem 1rem; /* Padding for better spacing */
+  transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+  background-color: #007bff; /* Background color on hover */
+  color: #fff; /* Text color on hover */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+}
+
+.custom-navbar .social-icons .nav-link {
+  color: #fff;
+  font-size: 1.5rem;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.custom-navbar .social-icons .nav-link:hover {
+  color: #ddd;
+}
+
+.custom-navbar .search-box {
+  position: relative;
+}
+
+.custom-navbar .search-input {
+   
+  background-color: #333; /* Dark grey background */
+  color: #fff; /* White text color */
+  border: 2px solid #444; /* Slightly lighter grey border */
+  border-radius: 20px 0 0 20px; /* Rounded corners for the left side */
+  padding: 0.5rem 1rem; /* Padding for better spacing */
+}
+
+.custom-navbar .search-input::placeholder {
+  color: #aaa; /* Light grey placeholder text */
+}
+
+.custom-navbar .search-button {
+    margin-right: 50px;
+  background-color: #007bff; /* Bootstrap primary color */
+  color: #fff; /* White text color */
+  border: 2px solid #007bff; /* Match the button border with the background */
+  border-radius: 0 20px 20px 0; /* Rounded corners for the right side */
+  padding: 0.5rem 1rem; /* Padding for better spacing */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.custom-navbar .search-button:hover {
+  background-color: #0056b3; /* Darker shade of primary color */
+  border-color: #0056b3; /* Match the border color on hover */
+}
+
+.social-icons img{
+  width: 80px;
+}

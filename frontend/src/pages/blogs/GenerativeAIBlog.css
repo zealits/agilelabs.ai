@@ -1,0 +1,72 @@
+.generative-ai-blog {
+    background-color: black; /* Black background */
+    color: white; /* White text color */
+    padding: 20px;
+    /* border-radius: 8px; */
+
+    margin: 0 auto; /* Center align on larger screens */
+}
+
+.generative-ai-blog h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.generative-ai-blog h2 {
+    font-size: 1.75rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.generative-ai-blog h3 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.generative-ai-blog p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .generative-ai-blog {
+        padding: 15px;
+    }
+
+    .generative-ai-blog h1 {
+        font-size: 1.8rem;
+    }
+
+    .generative-ai-blog h2,
+    .generative-ai-blog h3 {
+        font-size: 1.4rem;
+    }
+
+    .generative-ai-blog p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .generative-ai-blog {
+        padding: 10px 18px; 
+    }
+
+    .generative-ai-blog h1 {
+        font-size: 1.5rem;
+    }
+
+    .generative-ai-blog h2,
+    .generative-ai-blog h3 {
+        font-size: 1.3rem;
+    }
+
+    .generative-ai-blog p {
+        font-size: 0.9rem;
+    }
+}

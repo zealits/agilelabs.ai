@@ -1,0 +1,72 @@
+.deep-dive-martech-blog {
+    background-color: black;
+    padding: 20px;
+    text-align: left;
+    color: #fff; 
+    /* max-width: 800px; */
+    margin: 0 auto; /* Center align on larger screens */
+}
+
+.deep-dive-martech-blog h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.deep-dive-martech-blog h2 {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.deep-dive-martech-blog h3 {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.deep-dive-martech-blog p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .deep-dive-martech-blog {
+        padding: 15px;
+    }
+
+    .deep-dive-martech-blog h1 {
+        font-size: 1.8rem;
+    }
+
+    .deep-dive-martech-blog h2,
+    .deep-dive-martech-blog h3 {
+        font-size: 1.3rem;
+    }
+
+    .deep-dive-martech-blog p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .deep-dive-martech-blog {
+        padding: 10px 18px;
+    }
+
+    .deep-dive-martech-blog h1 {
+        font-size: 1.5rem;
+    }
+
+    .deep-dive-martech-blog h2,
+    .deep-dive-martech-blog h3 {
+        font-size: 1.2rem;
+    }
+
+    .deep-dive-martech-blog p {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,53 @@
+/* AllCategories.css */
+
+.categories-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.category {
+
+  padding: 20px 60px;
+  width: 100vw;
+}
+
+.category h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333333;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+.category-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.category-item:hover {
+  transform: translateY(-5px);
+  
+}
+
+.category-item span {
+  margin-left: 10px;
+  
+}
+
+.fa-icon {
+  width: 24px;
+  height: 24px;
+  color: #555;
+}

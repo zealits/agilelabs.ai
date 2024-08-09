@@ -1,0 +1,126 @@
+.navbar {
+    background-color: #f2f2f2;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .navbar-brand a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  
+  .navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-item {
+    position: relative;
+    margin-left: 20px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    background-color: #ddd;
+    color: #000;
+    border-radius: 5px;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 1000px; /* Increased width for larger content */
+    padding: 20px;
+    left: -900px; /* Adjusted positioning */
+  }
+  
+  .dropdown-item {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .nav-item:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-toggle:after {
+    content: ' \25BC'; /* Unicode character for a downwards arrow */
+    margin-left: 5px;
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+  }
+  
+  .dropdown-toggle:hover:after {
+    transform: rotate(180deg);
+  }
+  
+  .dropdown-content {
+    display: flex;
+    flex-wrap: wrap; /* Ensures items wrap to the next line */
+  }
+  
+  .mega-menu-section {
+    width: 100%; /* Full width for each section */
+    margin-bottom: 20px; /* Margin below sections */
+  }
+  
+  .mega-menu-section h5 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .mega-menu-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .mega-menu-section ul li {
+    width: calc(33.33% - 20px); /* 33.33% width for three columns with 20px margin */
+    margin-right: 20px; /* Margin between items */
+    margin-bottom: 10px; /* Margin below items */
+  }
+  
+  .mega-menu-section ul li a {
+    padding: 5px 0;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mega-menu-section ul li a:hover {
+    background-color: #f2f2f2;
+  }
+  

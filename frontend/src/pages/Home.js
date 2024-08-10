@@ -209,9 +209,9 @@ const Home = () => {
                   <Card.Body>
                     <Card.Title>{provider.name}</Card.Title>
                     <Card.Text>{provider.description}</Card.Text>
-                    <Button variant="primary" onClick={requestService} className="banner-button">
+                    {/*    <Button variant="primary" onClick={requestService} className="banner-button">
                       Explore reseller discount
-                    </Button>
+                    </Button> */}
                     <Button variant="primary" onClick={requestDemo} className="banner-button">
                       Request for demo
                     </Button>

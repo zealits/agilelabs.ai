@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.951e2575.css",
+    "main.js": "/static/js/main.169ccbf3.js",
+    "static/media/about.mp4": "/static/media/about.910e8a452197d2018756.mp4",
+    "static/media/heroVideo.mp4": "/static/media/heroVideo.1b3fc45326165f9944a8.mp4",
+    "static/media/globalmentor.png": "/static/media/globalmentor.36351f6d485668a9cad7.png",
+    "static/media/planning.png": "/static/media/planning.760000aef7e5a9edc4b0.png",
+    "static/media/dataanalysis.png": "/static/media/dataanalysis.9b7665d64d58e858e223.png",
+    "index.html": "/index.html",
+    "main.951e2575.css.map": "/static/css/main.951e2575.css.map",
+    "main.169ccbf3.js.map": "/static/js/main.169ccbf3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.951e2575.css",
+    "static/js/main.169ccbf3.js"
+  ]
+}

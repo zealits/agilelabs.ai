@@ -46,7 +46,7 @@ const ContactUs = () => {
           <div className="info">
             <div className="information">
               <i className="fas fa-map-marker-alt"></i> &nbsp;&nbsp;
-              <p> <FaMapMarkerAlt/> &nbsp;  Dallas Texas</p>
+              <p> <FaMapMarkerAlt/> &nbsp;  450 Century Pkwy, Ste 250, Allen, Texas 75013 </p>
             </div>
             <div className="information">
               <i className="fas fa-envelope"></i> &nbsp;&nbsp;

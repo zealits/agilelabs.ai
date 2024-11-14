@@ -78,7 +78,7 @@ const CustomNav = () => {
               <FaFacebook />
             </Nav.Link>
          
-              <img src="https://res.cloudinary.com/dzmn9lnk5/image/upload/v1720645185/agile/americanlog_fzkc7x.png" alt=" " />
+              {/* <img src="https://res.cloudinary.com/dzmn9lnk5/image/upload/v1720645185/agile/americanlog_fzkc7x.png" alt=" " /> */}
            
           </Nav>
         </Navbar.Collapse>

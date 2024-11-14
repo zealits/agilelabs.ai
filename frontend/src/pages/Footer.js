@@ -34,10 +34,10 @@ const Footer = () => {
             src="https://res.cloudinary.com/dzmn9lnk5/image/upload/v1720718371/agile/logos/aglietag_du4fcm.png"
             alt="Logo 1"
           />
-          <img
+          {/* <img
             src="https://res.cloudinary.com/dzmn9lnk5/image/upload/v1720645185/agile/americanlog_fzkc7x.png"
             alt="Logo 2"
-          />
+          /> */}
         </div>
       </div>
       <div className="footer-bottom">

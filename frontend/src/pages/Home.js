@@ -100,14 +100,13 @@ const Home = () => {
       link: "https://www.uniphore.com",
     },
     {
-      id: 5,
+      id: 2,
       name: "Snapcheck",
       description: "AI powered background check solutions",
       logo: "https://res.cloudinary.com/dzmn9lnk5/image/upload/v1720113718/agile/agileCarousel/snapcheck_nwyyy0.png",
       link: "https://www.snapcheck.io",
     },
 
-   
     {
       id: 3,
       name: "Base64.ai",
@@ -122,24 +121,28 @@ const Home = () => {
       logo: "https://res.cloudinary.com/dzmn9lnk5/image/upload/v1720717646/agile/logos/STUDIES-HQ_qkotcf.png",
       link: "https://www.snapcheck.io",
     },
-    
-    
+
     {
-      id: 7,
+      id: 5,
       name: "Botpenguins",
       description: "AI Chatbot Automation.",
       logo: "https://cdn.prod.website-files.com/661e75fc70756be16764754b/66b2b672d0ca546c50a4d5df_relinns-logo-partner-gallery.webp",
       link: "https://www.snapcheck.io",
     },
     {
-      id: 2,
+      id: 6,
       name: "AIGO",
       description: "AGI powered chatbot solutions",
       logo: "data:image/png;base64,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",
       link: "https://www.aigo.ai",
     },
-    
-   
+    {
+      id: 7,
+      name: "ezofis",
+      description: "Ezofis automates business workflows.",
+      logo: "https://res.cloudinary.com/dzmn9lnk5/image/upload/v1731548034/agile/logos/ezofis-LogoV2_ckmbbz.png",
+      link: "https://ezofis.com/",
+    },
   ];
 
   return (

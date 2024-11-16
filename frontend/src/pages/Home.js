@@ -102,7 +102,7 @@ const Home = () => {
     {
       id: 2,
       name: "automat",
-      description: "Intelligent document processing",
+      description: "AI powered RPA and IDP",
       logo: "https://cdn.prod.website-files.com/64d14806abf1dc04577f9cc0/64d1920312fc6b2613d5234c_logo-automat.svg",
       link: "https://www.snapcheck.io",
     },

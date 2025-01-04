@@ -527,3 +527,65 @@ padding-bottom: 40px;
     height: 280px;
     width: 100vw;
       }
+
+
+
+/* Logo Carousel Styles */
+.carousel-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.carousel-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.carousel-item {
+  flex-shrink: 0;
+  width: 25%; /* 100% / 4 logos */
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.carousel-logo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 80px; /* Adjust based on your needs */
+}
+
+/* Optional: Add hover effect */
+.carousel-logo:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Optional: Add responsive styles */
+@media (max-width: 768px) {
+  .carousel-item {
+    width: 50%; /* Show 2 logos on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-item {
+    width: 100%; /* Show 1 logo on very small screens */
+  }
+}

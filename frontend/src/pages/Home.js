@@ -28,6 +28,17 @@ const Home = () => {
   const navigate = useNavigate();
   const videoRef = useRef(null);
   const servicesRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const logosToShow = 4;
+
+  const logos = [
+    "https://res.cloudinary.com/dzmn9lnk5/image/upload/v1720717646/agile/logos/STUDIES-HQ_qkotcf.png",
+    "https://res.cloudinary.com/dzmn9lnk5/image/upload/v1720717646/agile/logos/STUDIES-HQ_qkotcf.png",
+    "https://res.cloudinary.com/dzmn9lnk5/image/upload/v1720717646/agile/logos/STUDIES-HQ_qkotcf.png",
+    "https://res.cloudinary.com/dzmn9lnk5/image/upload/v1720717646/agile/logos/STUDIES-HQ_qkotcf.png",
+    "https://res.cloudinary.com/dzmn9lnk5/image/upload/v1720717646/agile/logos/STUDIES-HQ_qkotcf.png",
+    "https://res.cloudinary.com/dzmn9lnk5/image/upload/v1720717646/agile/logos/STUDIES-HQ_qkotcf.png",
+  ];
 
   useEffect(() => {
     const video = videoRef.current;
@@ -53,6 +64,14 @@ const Home = () => {
       }
     };
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + logosToShow >= logos.length ? 0 : prevIndex + 1));
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [logos.length]);
 
   const handleCardClick = (id) => {
     navigate(`/service/${id}`);
@@ -236,6 +255,24 @@ const Home = () => {
             ))}
           </Row>
         </Container>
+      </section>
+
+      <section className="carousel-section">
+        <h2 className="carousel-title">Trusted by leading brands worldwide</h2>
+        <div className="carousel-container">
+          <div
+            className="carousel-track"
+            style={{
+              transform: `translateX(-${currentIndex * (100 / logosToShow)}%)`,
+            }}
+          >
+            {logos.map((logo, index) => (
+              <div key={index} className="carousel-item">
+                <img src={logo} alt={`Client Logo ${index + 1}`} className="carousel-logo" />
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Banner Section */}

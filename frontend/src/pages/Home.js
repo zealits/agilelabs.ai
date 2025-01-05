@@ -22,23 +22,25 @@ import serv16 from "../assets/images/services/marketing.png";
 import serv17 from "../assets/images/services/virtualAgents.png";
 import serv18 from "../assets/images/services/aiTraining.png";
 import serv19 from "../assets/images/services/aiInfrastucture.png";
+import client1 from "../assets/images/clients/northern-logistics-logo.png";
+import client2 from "../assets/images/clients/finnely-law.png";
+import client3 from "../assets/images/clients/sunward.png";
+import client4 from "../assets/images/clients/esolutions.png";
+import client5 from "../assets/images/clients/concentrix.png";
+import client6 from "../assets/images/clients/firstsource.png";
+import client7 from "../assets/images/clients/Aii.png";
+import client8 from "../assets/images/clients/techmahindra.png";
 import heroVideo from "../assets/video/heroVideo.mp4";
 
 const Home = () => {
   const navigate = useNavigate();
   const videoRef = useRef(null);
   const servicesRef = useRef(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const logosToShow = 4;
 
-  const logos = [
-    "https://res.cloudinary.com/dzmn9lnk5/image/upload/v1720717646/agile/logos/STUDIES-HQ_qkotcf.png",
-    "https://res.cloudinary.com/dzmn9lnk5/image/upload/v1720717646/agile/logos/STUDIES-HQ_qkotcf.png",
-    "https://res.cloudinary.com/dzmn9lnk5/image/upload/v1720717646/agile/logos/STUDIES-HQ_qkotcf.png",
-    "https://res.cloudinary.com/dzmn9lnk5/image/upload/v1720717646/agile/logos/STUDIES-HQ_qkotcf.png",
-    "https://res.cloudinary.com/dzmn9lnk5/image/upload/v1720717646/agile/logos/STUDIES-HQ_qkotcf.png",
-    "https://res.cloudinary.com/dzmn9lnk5/image/upload/v1720717646/agile/logos/STUDIES-HQ_qkotcf.png",
-  ];
+  useEffect(() => {
+    const copy = document.querySelector(".logo-slider__logos-slide").cloneNode(true);
+    document.querySelector(".logo-slider__wrapper").appendChild(copy);
+  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -64,14 +66,6 @@ const Home = () => {
       }
     };
   }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + logosToShow >= logos.length ? 0 : prevIndex + 1));
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, [logos.length]);
 
   const handleCardClick = (id) => {
     navigate(`/service/${id}`);
@@ -258,19 +252,17 @@ const Home = () => {
       </section>
 
       <section className="carousel-section">
-        <h2 className="carousel-title">Trusted by leading brands worldwide</h2>
-        <div className="carousel-container">
-          <div
-            className="carousel-track"
-            style={{
-              transform: `translateX(-${currentIndex * (100 / logosToShow)}%)`,
-            }}
-          >
-            {logos.map((logo, index) => (
-              <div key={index} className="carousel-item">
-                <img src={logo} alt={`Client Logo ${index + 1}`} className="carousel-logo" />
-              </div>
-            ))}
+        <h2 >Trusted by leading brands worldwide</h2>
+        <div className="logo-slider__wrapper">
+          <div className="logo-slider__logos-slide">
+            <img src={client1} alt="northern" className="logo-slider__image" />
+            <img src={client2} alt="finnely" className="logo-slider__image finnely" />
+            <img src={client3} alt="sunward" className="logo-slider__image" />
+            <img src={client4} alt="esoultions" className="logo-slider__image" />
+            <img src={client5} alt="concentrix" className="logo-slider__image concentrix" />
+            <img src={client6} alt="firstsource" className="logo-slider__image" />
+            <img src={client7} alt="aii" className="logo-slider__image aii" />
+            <img src={client8} alt="techmahindra" className="logo-slider__image" />
           </div>
         </div>
       </section>

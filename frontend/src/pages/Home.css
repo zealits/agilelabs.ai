@@ -529,63 +529,132 @@ padding-bottom: 40px;
       }
 
 
-
-/* Logo Carousel Styles */
-.carousel-section {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  padding: 20px 0;
-}
-
-.carousel-title {
+      .carousel-section{
+        margin-top: 20px;
+      }
+.carousel-section h2{
   text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
+  margin-bottom: 0;
+  /* font-weight: bold; */
 }
+      .logo-slider__wrapper {
+        overflow: hidden;
+        padding: 0px 0 50px 0;
+        margin: 0 auto; /* Centering */
+        width: 90%; /* Adjusts margin and width dynamically */
+        white-space: nowrap;
+        position: relative;
+      }
+      
+      .logo-slider__wrapper:hover .logo-slider__logos-slide {
+        animation-play-state: paused;
+      }
+      
+      .logo-slider__logos-slide {
+        display: inline-block;
+        animation: 45s slide infinite linear;
+      }
+      
+      .logo-slider__image {
+        width: 150px; /* Base size */
+        height: auto; /* Maintain aspect ratio */
+        margin: 0 20px; /* Reduced margin for smaller screens */
+        transition: transform 0.3s ease;
+      }
+      
+      .logo-slider__image:hover {
+        transform: scale(1.1); /* Slight zoom on hover */
+      }
+      
+      .concentrix {
+        width: 250px; /* Adjust for specific logo */
+        height: auto;
+      }
+      
+      .finnely {
+        width: 200px;
+        height: auto;
+      }
+      
+      .aii {
+        width: 100px;
+        height: auto;
+      }
+      
+      @keyframes slide {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+      }
+      
+      /* Responsive Breakpoints */
+      @media (max-width: 1200px) {
+        .logo-slider__image {
+          width: 120px;
+          margin: 0 15px;
+        }
+        .concentrix {
+          width: 200px;
+        }
+        .finnely {
+          width: 180px;
+        }
+        .aii {
+          width: 90px;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .logo-slider__image {
+          width: 100px;
+          margin: 0 10px;
+        }
+        .concentrix {
+          width: 150px;
+        }
+        .finnely {
+          width: 140px;
+        }
+        .aii {
+          width: 80px;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .logo-slider__image {
+          width: 80px;
+          margin: 0 5px;
+        }
+        .concentrix {
+          width: 120px;
+        }
+        .finnely {
+          width: 100px;
+        }
+        .aii {
+          width: 60px;
+        }
+      }
+        
 
-.carousel-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
 
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 100%;
-}
 
-.carousel-item {
-  flex-shrink: 0;
-  width: 25%; /* 100% / 4 logos */
-  padding: 0 15px;
-  box-sizing: border-box;
-}
+      /* .concentrix{
+        width: 300px;
+        height: 60px;
+      }
 
-.carousel-logo {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  max-height: 80px; /* Adjust based on your needs */
-}
+      .finnely{
+        width:280px; 
+        height: 140px;
+      }
 
-/* Optional: Add hover effect */
-.carousel-logo:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
-}
+      .aii{
+        width:120px;
+        height:100px;
 
-/* Optional: Add responsive styles */
-@media (max-width: 768px) {
-  .carousel-item {
-    width: 50%; /* Show 2 logos on smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .carousel-item {
-    width: 100%; /* Show 1 logo on very small screens */
-  }
-}
+      } */

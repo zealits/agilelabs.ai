@@ -21,11 +21,9 @@ const CustomNav = () => {
     navigate(`/contact-us/`);
   };
 
-
   const handleBlog = () => {
     navigate(`/blog/`);
   };
-
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -71,15 +69,14 @@ const CustomNav = () => {
             </Button>
           </Form>
           <Nav className="ml-auto social-icons">
-            <Nav.Link href="https://www.linkedin.com/company/agile-labs-axpert/?originalSubdomain=in" target="_blank">
+            <Nav.Link href="https://www.linkedin.com/company/agilelabs-ai/" target="_blank">
               <FaLinkedin />
             </Nav.Link>
             <Nav.Link href="https://www.facebook.com/people/Agile-LabsAI/100093562100160/" target="_blank">
               <FaFacebook />
             </Nav.Link>
-         
-              {/* <img src="https://res.cloudinary.com/dzmn9lnk5/image/upload/v1720645185/agile/americanlog_fzkc7x.png" alt=" " /> */}
-           
+
+            {/* <img src="https://res.cloudinary.com/dzmn9lnk5/image/upload/v1720645185/agile/americanlog_fzkc7x.png" alt=" " /> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

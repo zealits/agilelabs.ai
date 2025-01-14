@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import './ContactUs.css';
+import React, { useEffect } from "react";
+import "./ContactUs.css";
 import { FaLinkedin, FaFacebook } from "react-icons/fa";
-import { FaPhone, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
+import { FaPhone, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 
 const ContactUs = () => {
   useEffect(() => {
@@ -39,22 +39,29 @@ const ContactUs = () => {
       <div className="form">
         <div className="contact-info">
           <h3 className="titleContact">Let's get in touch</h3>
-          <p className="text">
-         
-          </p>
+          <p className="text"></p>
 
           <div className="info">
             <div className="information">
               <i className="fas fa-map-marker-alt"></i> &nbsp;&nbsp;
-              <p> <FaMapMarkerAlt/> &nbsp;  450 Century Pkwy, Ste 250, Allen, Texas 75013 </p>
+              <p>
+                {" "}
+                <FaMapMarkerAlt /> &nbsp; 450 Century Pkwy, Ste 250, Allen, Texas 75013{" "}
+              </p>
             </div>
             <div className="information">
               <i className="fas fa-envelope"></i> &nbsp;&nbsp;
-              <p> <FaEnvelope /> &nbsp; network@agilelabs.ai</p>
+              <p>
+                {" "}
+                <FaEnvelope /> &nbsp; network@agilelabs.ai
+              </p>
             </div>
             <div className="information">
               <i className="fas fa-phone"></i> &nbsp;&nbsp;
-              <p>  <FaPhone /> &nbsp; +1 (650) 597-3601</p>
+              <p>
+                {" "}
+                <FaPhone /> &nbsp; +1 (650) 597-3601
+              </p>
             </div>
           </div>
 
@@ -62,12 +69,11 @@ const ContactUs = () => {
             <p>Connect with us :</p>
             <div className="socialContactIcons">
               <a href="https://www.facebook.com/people/Agile-LabsAI/100093562100160/">
-              <FaFacebook />
+                <FaFacebook />
               </a>
-              <a href="https://www.linkedin.com/company/agile-labs-axpert/?originalSubdomain=in">
-              <FaLinkedin />
+              <a href="https://www.linkedin.com/company/agilelabs-ai/">
+                <FaLinkedin />
               </a>
-              
             </div>
           </div>
         </div>
@@ -104,6 +110,6 @@ const ContactUs = () => {
       </div>
     </div>
   );
-}
+};
 
 export default ContactUs;

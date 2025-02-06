@@ -31,6 +31,8 @@ import client3 from "../assets/images/clients/firstsource.png";
 import client7 from "../assets/images/clients/Aii.png";
 import client8 from "../assets/images/clients/techmahindra.png";
 import client9 from "../assets/images/clients/altimetrik.png";
+import client10 from "../assets/images/clients/Finnely Properties.png";
+import mark1 from "../assets/images/marketplace/kroolo.png";
 import heroVideo from "../assets/video/heroVideo.mp4";
 
 const Home = () => {
@@ -164,6 +166,13 @@ const Home = () => {
       logo: "https://res.cloudinary.com/dzmn9lnk5/image/upload/v1731548034/agile/logos/ezofis-LogoV2_ckmbbz.png",
       link: "https://ezofis.com/",
     },
+    {
+      id: 9,
+      name: "kroolo",
+      description: "AI-powered productivity platform.",
+      logo: mark1,
+      link: "https://www.kroolo.com",
+    },
   ];
 
   return (
@@ -265,6 +274,7 @@ const Home = () => {
             <img src={client7} alt="aii" className="logo-slider__image aii" />
             <img src={client8} alt="techmahindra" className="logo-slider__image" />
             <img src={client9} alt="altrimak" className="logo-slider__image" />
+            <img src={client10} alt="finney properties" className="logo-slider__image" />
           </div>
         </div>
       </section>

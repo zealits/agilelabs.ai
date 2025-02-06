@@ -30,6 +30,7 @@ import client5 from "../assets/images/clients/concentrix.png";
 import client3 from "../assets/images/clients/firstsource.png";
 import client7 from "../assets/images/clients/Aii.png";
 import client8 from "../assets/images/clients/techmahindra.png";
+import client9 from "../assets/images/clients/altimetrik.png";
 import heroVideo from "../assets/video/heroVideo.mp4";
 
 const Home = () => {
@@ -263,6 +264,7 @@ const Home = () => {
             <img src={client6} alt="firstsource" className="logo-slider__image" />
             <img src={client7} alt="aii" className="logo-slider__image aii" />
             <img src={client8} alt="techmahindra" className="logo-slider__image" />
+            <img src={client9} alt="altrimak" className="logo-slider__image" />
           </div>
         </div>
       </section>

@@ -1,9 +1,13 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Container, Form, Button, Row, Col, Card, Alert } from "react-bootstrap";
 import "./Register.css"; // Create this CSS file for custom styles
 import emailjs from "@emailjs/browser";
+import axios from "axios";
 
 const Register = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [formData, setFormData] = useState({
     companyName: "",
     contactPerson: "",
@@ -30,23 +34,55 @@ const Register = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(form.current);
+    console.log(formData);
 
-    emailjs.sendForm("service_l4p8sqs", "template_aswjtaa", form.current, "YpoxBk7FCyOu5qiel").then(
-      (result) => {
-        console.log("Email successfully sent!", result.text);
-        setMessage({ type: "success", text: "Form submited successfully!" });
-      },
-      (error) => {
-        console.log("Failed to send email.", error.text);
-        setMessage({ type: "error", text: "Failed to submit form." });
+    try {
+      const response = await axios.post("/aak/l1/registerservice", formData);
+
+      if (response.status === 200) {
+        setMessage({ type: "success", text: "Service registered successfully!" });
+
+        // Clear the form after successful submission
+        setFormData({
+          companyName: "",
+          contactPerson: "",
+          position: "",
+          email: "",
+          phoneNumber: "",
+          companyWebsite: "",
+          aiServices: "",
+          aiModels: "",
+          aiProducts: "",
+          bigCustomers: "",
+          revenue: "",
+          headquarters: "",
+        });
       }
-    );
-
-    // Optionally clear the form after submission
+    } catch (error) {
+      console.error("Error registering service:", error);
+      setMessage({ type: "danger", text: "Something went wrong. Please try again." });
+    }
   };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log(formData);
+
+  //   emailjs.sendForm("service_l4p8sqs", "template_aswjtaa", form.current, "YpoxBk7FCyOu5qiel").then(
+  //     (result) => {
+  //       console.log("Email successfully sent!", result.text);
+  //       setMessage({ type: "success", text: "Form submited successfully!" });
+  //     },
+  //     (error) => {
+  //       console.log("Failed to send email.", error.text);
+  //       setMessage({ type: "error", text: "Failed to submit form." });
+  //     }
+  //   );
+
+  //   // Optionally clear the form after submission
+  // };
 
   return (
     <Container className="register-container">
@@ -156,7 +192,6 @@ const Register = () => {
                     name="aiModels"
                     value={formData.aiModels}
                     onChange={handleChange}
-                    required
                   />
                 </Form.Group>
                 <Form.Group controlId="formAIProducts" className="mb-3">
@@ -186,7 +221,6 @@ const Register = () => {
                   />
                 </Form.Group>
 
-
                 <Form.Group controlId="formRevenue" className="mb-3">
                   <Form.Label>
                     Revenue <span className="required">*</span>
@@ -200,15 +234,12 @@ const Register = () => {
                     onChange={handleChange}
                     required
                   >
-
-                  <option value="Less than 1 Millon">Less than 1 Millon</option>
-                  <option value="1 Millon to 10 Millon">1 Millon to 10 Millon </option>
-                  <option value="11 Millon to 50 Millon">11 Millon to 50 Millon </option>
-                  <option value="Greater than 50 Millon">Greater than 50 Millon </option>
+                    <option value="Less than 1 Millon">Less than 1 Millon</option>
+                    <option value="1 Millon to 10 Millon">1 Millon to 10 Millon </option>
+                    <option value="11 Millon to 50 Millon">11 Millon to 50 Millon </option>
+                    <option value="Greater than 50 Millon">Greater than 50 Millon </option>
                   </Form.Control>
                 </Form.Group>
-
-
 
                 <Form.Group controlId="formHeadquarters" className="mb-3">
                   <Form.Label>

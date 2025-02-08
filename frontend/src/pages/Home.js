@@ -82,8 +82,10 @@ const Home = () => {
     navigate("/request-service");
   };
 
-  const requestDemo = () => {
-    navigate("/request-demo");
+  const requestDemo = (providerName) => {
+    navigate("/request-demo", { 
+      state: { providerName: providerName }
+    });
   };
   const categories = [
     { id: 1, name: "AI Consulting and Strategy Development", description: "Description of service 1", imgSrc: serv1 },
@@ -250,7 +252,7 @@ const Home = () => {
                     {/*    <Button variant="primary" onClick={requestService} className="banner-button">
                       Explore reseller discount
                     </Button> */}
-                    <Button variant="primary" onClick={requestDemo} className="banner-button">
+                    <Button variant="primary" onClick={() => requestDemo(provider.name)} className="banner-button">
                       Request for demo
                     </Button>
                   </Card.Body>
@@ -262,7 +264,7 @@ const Home = () => {
       </section>
 
       <section className="carousel-section">
-        <h2 >Trusted by leading brands worldwide</h2>
+        <h2>Trusted by leading brands worldwide</h2>
         <div className="logo-slider__wrapper">
           <div className="logo-slider__logos-slide">
             <img src={client1} alt="northern" className="logo-slider__image" />

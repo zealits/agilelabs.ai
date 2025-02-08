@@ -17,12 +17,13 @@ const venue = require("./routes/venueRoute");
 const user = require("./routes/userRoute");
 const company = require("./routes/companyRoute");
 const serviceDetail = require("./routes/serviceDetailRoute");
+const formData = require("./routes/formRoutes.js");
 
 // app.use("/api/z1",product);
 app.use("/aak/l1", venue);
 app.use("/aak/l1", user);
 app.use("/aak/l1", company);
-app.use("/aak/l1", serviceDetail);
+app.use("/aak/l1", formData);
 
 app.use(express.static(path.join(__dirname, "../frontend/build")));
 

@@ -1,0 +1,299 @@
+.agile-services-container {
+  padding: 60px 20px 20px 100px;
+  background-color: #121212;
+  min-height: 100vh;
+  margin: 0;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.agile-services-title {
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.agile-services-row {
+  margin: 0 -15px;
+}
+
+.agile-services-col {
+  margin-bottom: 30px;
+}
+
+.agile-service-card {
+  cursor: pointer;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #1e1e1e;
+  overflow: hidden;
+  height: 100%;
+  width: 300px;
+}
+
+.agile-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.agile-service-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+}
+
+.agile-service-card-body {
+  padding: 25px;
+}
+
+.agile-service-card-title {
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.agile-service-card-text {
+  color: #b3b3b3;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Domain Strip Styles */
+.agile-domains-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
+  background: #1e1e1e;
+  border-radius: 15px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.agile-domain-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 25px;
+  background: #2a2a2a;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.agile-domain-item:hover {
+  transform: translateY(-3px);
+  background: #333;
+}
+
+.agile-domain-icon {
+  color: #007bff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agile-domain-name {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Domain Section Styles */
+.agile-domain-col {
+  margin-bottom: 30px;
+}
+
+.agile-domain-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  background: #1e1e1e;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.agile-domain-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.agile-domain-image-wrapper {
+  height: 100%;
+  min-height: 250px;
+  overflow: hidden;
+}
+
+.agile-domain-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.agile-domain-card:hover .agile-domain-image {
+  transform: scale(1.05);
+}
+
+.agile-domain-card-body {
+  padding: 30px;
+  position: relative;
+}
+
+.agile-domain-icon-wrapper {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.agile-domain-card-title {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.agile-domain-card-text {
+  color: #b3b3b3;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.agile-domain-expertise {
+  margin-top: 20px;
+}
+
+.agile-domain-expertise h4 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.agile-domain-expertise-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.agile-domain-expertise-list li {
+  color: #b3b3b3;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.agile-domain-expertise-list li:before {
+  content: "•";
+  color: #007bff;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .agile-services-container {
+    padding: 40px 15px;
+  }
+
+  .agile-services-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .agile-service-card-title {
+    font-size: 1.2rem;
+  }
+
+  .agile-service-card-text {
+    font-size: 0.9rem;
+  }
+
+  .agile-domains-strip {
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .agile-domain-item {
+    padding: 12px 20px;
+  }
+
+  .agile-domain-name {
+    font-size: 1rem;
+  }
+
+  .agile-domain-card-title {
+    font-size: 1.5rem;
+  }
+
+  .agile-domain-card-text {
+    font-size: 1rem;
+  }
+
+  .agile-domain-expertise-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .agile-services-container {
+    padding: 30px 10px;
+  }
+
+  .agile-services-title {
+    font-size: 1.8rem;
+  }
+
+  .agile-service-card-title {
+    font-size: 1.1rem;
+  }
+
+  .agile-service-card-text {
+    font-size: 0.85rem;
+  }
+
+  .agile-domains-strip {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .agile-domain-item {
+    justify-content: center;
+  }
+
+  .agile-domain-image-wrapper {
+    min-height: 200px;
+  }
+
+  .agile-domain-card-body {
+    padding: 20px;
+  }
+
+  .agile-domain-card-title {
+    font-size: 1.3rem;
+  }
+
+  .agile-domain-card-text {
+    font-size: 0.9rem;
+  }
+} 

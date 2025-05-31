@@ -27,14 +27,17 @@ export const getAllServices =
       const link = `/aak/l1/serviceDetails?keyword=${keyword}&page=${currentPage}`;
       const { data } = await axios.get(link);
 
+      // Ensure we're dispatching an array
+      const services = Array.isArray(data.serviceDetails) ? data.serviceDetails : [];
+
       dispatch({
         type: GET_ALL_SERVICES_SUCCESS,
-        payload: data.serviceDetails,
+        payload: services,
       });
     } catch (error) {
       dispatch({
         type: GET_ALL_SERVICES_FAIL,
-        payload: error.response.data.message,
+        payload: error.response?.data?.message || "Failed to fetch services",
       });
     }
   };

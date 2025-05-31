@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Container, Form, Button, Row, Col, Card, Alert } from "react-bootstrap";
 import "./Register.css"; // Create this CSS file for custom styles
-import emailjs from "@emailjs/browser";
 import axios from "axios";
+import emailjs from "@emailjs/browser";
 
 const Register = () => {
   useEffect(() => {
@@ -34,17 +34,18 @@ const Register = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
+  
+
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    // console.log(form.current);
 
-    try {
-      const response = await axios.post("/aak/l1/registerservice", formData);
-
-      if (response.status === 200) {
-        setMessage({ type: "success", text: "Service registered successfully!" });
-
-        // Clear the form after successful submission
+    emailjs.sendForm("service_l4p8sqs", "template_aswjtaa", form.current, "YpoxBk7FCyOu5qiel").then(
+      (result) => {
+        console.log("Email successfully sent!", result.text);
+        setMessage({ type: "success", text: "Form submited successfully!" });
+        window.scrollTo({ top: 0, behavior: "smooth" });
         setFormData({
           companyName: "",
           contactPerson: "",
@@ -59,30 +60,18 @@ const Register = () => {
           revenue: "",
           headquarters: "",
         });
+      },
+      (error) => {
+        console.log("Failed to send email.", error.text);
+        setMessage({ type: "error", text: "Failed to submit form." });
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
-    } catch (error) {
-      console.error("Error registering service:", error);
-      setMessage({ type: "danger", text: "Something went wrong. Please try again." });
-    }
+    );
+
+    // Optionally clear the form after submission
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(formData);
-
-  //   emailjs.sendForm("service_l4p8sqs", "template_aswjtaa", form.current, "YpoxBk7FCyOu5qiel").then(
-  //     (result) => {
-  //       console.log("Email successfully sent!", result.text);
-  //       setMessage({ type: "success", text: "Form submited successfully!" });
-  //     },
-  //     (error) => {
-  //       console.log("Failed to send email.", error.text);
-  //       setMessage({ type: "error", text: "Failed to submit form." });
-  //     }
-  //   );
-
-  //   // Optionally clear the form after submission
-  // };
+  
 
   return (
     <Container className="register-container">
@@ -267,3 +256,49 @@ const Register = () => {
 };
 
 export default Register;
+
+
+
+
+
+
+
+
+
+// const handleSubmit = async (e) => {
+//   e.preventDefault();
+//   console.log(formData);
+
+//   try {
+//     const response = await axios.post("/aak/l1/registerservice", formData);
+
+//     if (response.status === 200) {
+//       setMessage({ type: "success", text: "Service registered successfully!" });
+
+//        // Scroll to the top of the page
+//        window.scrollTo({ top: 0, behavior: "smooth" });
+
+//       // Clear the form after successful submission
+//       setFormData({
+//         companyName: "",
+//         contactPerson: "",
+//         position: "",
+//         email: "",
+//         phoneNumber: "",
+//         companyWebsite: "",
+//         aiServices: "",
+//         aiModels: "",
+//         aiProducts: "",
+//         bigCustomers: "",
+//         revenue: "",
+//         headquarters: "",
+//       });
+//     }
+//   } catch (error) {
+//     console.error("Error registering service:", error);
+//     setMessage({ type: "danger", text: "Something went wrong. Please try again." });
+
+     
+//      window.scrollTo({ top: 0, behavior: "smooth" });
+//   }
+// };

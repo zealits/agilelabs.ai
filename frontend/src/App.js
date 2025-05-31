@@ -14,13 +14,14 @@ import ServiceDetails from "./pages/ServiceDetails.js";
 import SearchResults from "./pages/SearchResults.js";
 import ContactUs from "./pages/ContactUs.js";
 import Blog from "./pages/blog.js";
-
+import Services from "./pages/Services.js";
 import AboutUs from "./pages/AboutUs.js";
 import About from "./pages/About.js";
 import Footer from "./pages/Footer.js";
 import DeepDiveMarTechBlog from "./pages/blogs/DeepDiveMarTechBlog.js";
 import GenerativeAIBlog from "./pages/blogs/GenerativeAIBlog.js";
 import HealthcareAIBlog from "./pages/blogs/HealthcareAIBlog.js";
+import ServiceDetail from "./pages/ServiceDetail.js";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <CustomNav />
         <Routes>
           <Route path="/service/:id" element={<ServiceDetails />} />
+          <Route path="/services/:id" element={<ServiceDetail />} />
           {/* <Route path="/about" element={<AboutUs />} /> */}
           <Route path="/about-us" element={<About />} />
           <Route path="/register" element={<Register />} />
@@ -37,10 +39,17 @@ function App() {
           <Route path="/request-service" element={<UserServiceForm />} />
           <Route path="/request-demo" element={<UserDemoForm />} />
           <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/a-deep-dive-into-7-emerging-martech-trends" element={<DeepDiveMarTechBlog />} />
-          <Route path="/unleashing-the-transformative-power-of-generative-ai-in-overcoming-business-challenges" element={<GenerativeAIBlog />} />
-          <Route path="/revolutionizing-healthcare-management-the-role-and-challenges-of-artificial-intelligence" element={<HealthcareAIBlog />} />
+          <Route
+            path="/unleashing-the-transformative-power-of-generative-ai-in-overcoming-business-challenges"
+            element={<GenerativeAIBlog />}
+          />
+          <Route
+            path="/revolutionizing-healthcare-management-the-role-and-challenges-of-artificial-intelligence"
+            element={<HealthcareAIBlog />}
+          />
           <Route path="/" element={<Home />} />
         </Routes>
         <Footer />
@@ -50,6 +59,3 @@ function App() {
 }
 
 export default App;
-
-
-

@@ -25,6 +25,8 @@ const CustomNav = () => {
     navigate(`/blog/`);
   };
 
+
+
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchTerm.trim()) {
@@ -33,7 +35,7 @@ const CustomNav = () => {
   };
 
   const handleServices = () => {
-    navigate(`/`, { state: { scrollToServices: true } });
+    navigate(`/services`);
   };
 
   return (
@@ -51,8 +53,8 @@ const CustomNav = () => {
           <Nav className="me-auto">
             <Nav.Link onClick={handleHome}>Home</Nav.Link>
             <Nav.Link onClick={handleAbout}>About </Nav.Link>
-            {/* <Nav.Link onClick={handleServices}>Services</Nav.Link> */}
-            <Nav.Link onClick={handleBlog}>Blog</Nav.Link>
+            <Nav.Link onClick={handleServices}>Services</Nav.Link>
+            {/* <Nav.Link onClick={handleBlog}>Blog</Nav.Link> */}
             <Nav.Link onClick={handleContactus}>Contact</Nav.Link>
           </Nav>
           <Form onSubmit={handleSearch} className="d-flex search-box">

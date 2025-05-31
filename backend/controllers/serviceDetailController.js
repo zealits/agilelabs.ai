@@ -25,6 +25,8 @@ exports.getAllServiceDetails = catchAsyncErrors(async (req, res, next) => {
   const apiFeatures = new ApiFeatures(ServiceDetail.find(), req.query).search().pagination(resultPerPage);
   const serviceDetails = await apiFeatures.query;
 
+  console.log(serviceDetails);
+
   res.status(200).json({
     success: true,
     serviceDetails,

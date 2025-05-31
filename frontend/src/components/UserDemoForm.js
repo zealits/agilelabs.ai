@@ -1,20 +1,18 @@
-import React, { useState, useRef,useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Container, Form, Button, Row, Col, Card, Alert } from "react-bootstrap";
 import axios from "axios";
 import "./UserServiceForm.css"; // Ensure you have a corresponding CSS file
 import { useLocation } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 
 const UserServiceForm = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
- 
-
-useEffect(() => {
-  window.scrollTo(0, 0);
-}, []);
-
-const location = useLocation();
-const providerName = location.state?.providerName;
-console.log(providerName);
+  const location = useLocation();
+  const providerName = location.state?.providerName;
+  console.log(providerName);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -25,7 +23,6 @@ console.log(providerName);
     solutionProviderName: providerName,
   });
 
- 
   const form = useRef();
   const [message, setMessage] = useState(null);
 
@@ -34,21 +31,27 @@ console.log(providerName);
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log(formData);
-    try {
-      const response = await axios.post("/aak/l1/formSubmission", formData);
 
-      if (response.status === 200) {
-        setMessage({ type: "success", text: "Form submitted successfully!" });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    emailjs.sendForm("service_l4p8sqs", "template_qcrc2mm", form.current, "YpoxBk7FCyOu5qiel").then(
+      (result) => {
+        console.log("Form submited successfully!", result.text);
+        setMessage({ type: "success", text: "Form submited successfully!" });
+        window.scrollTo({ top: 0, behavior: "smooth" });
         setFormData({ name: "", phone: "", email: "", companyWebsite: "", decisionTimeline: "" });
+      },
+      (error) => {
+        console.log("Failed to submit form.", error.text);
+        setMessage({ type: "error", text: "Failed to submit form." });
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      setMessage({ type: "danger", text: "Something went wrong. Please try again." });
-    }
+    );
+    console.log(formData);
   };
+
+  
 
   return (
     <Container className="user-service-form-container">
@@ -59,6 +62,7 @@ console.log(providerName);
               <h3 className="text-center mb-4">Request Demo for {providerName}</h3>
               {message && <Alert variant={message.type === "success" ? "success" : "danger"}>{message.text}</Alert>}
               <Form ref={form} onSubmit={handleSubmit}>
+              <input type="hidden" name="solutionProviderName" value={formData.solutionProviderName} />
                 <Form.Group controlId="formName" className="mb-3">
                   <Form.Label>
                     Full Name <span className="required">*</span>
@@ -134,7 +138,7 @@ console.log(providerName);
                   </Form.Control>
                 </Form.Group>
 
-                <Button variant="primary" type="submit" className="w-100">
+                <Button variant="primary" type="submit" className="w-100 requestDemobutton">
                   Submit
                 </Button>
               </Form>
@@ -147,3 +151,26 @@ console.log(providerName);
 };
 
 export default UserServiceForm;
+
+
+
+
+// const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   console.log(formData);
+  //   try {
+  //     const response = await axios.post("/aak/l1/formSubmission", formData);
+
+  //     if (response.status === 200) {
+  //       setMessage({ type: "success", text: "Form submitted successfully!" });
+  //       // Scroll to the top of the page
+  //       window.scrollTo({ top: 0, behavior: "smooth" });
+  //       setFormData({ name: "", phone: "", email: "", companyWebsite: "", decisionTimeline: "" });
+  //     }
+  //   } catch (error) {
+  //     console.error("Error submitting form:", error);
+  //     // Scroll to the top of the page
+  //     window.scrollTo({ top: 0, behavior: "smooth" });
+  //     setMessage({ type: "danger", text: "Something went wrong. Please try again." });
+  //   }
+  // };

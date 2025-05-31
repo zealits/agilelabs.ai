@@ -24,6 +24,7 @@ app.use("/aak/l1", venue);
 app.use("/aak/l1", user);
 app.use("/aak/l1", company);
 app.use("/aak/l1", formData);
+app.use("/aak/l1", serviceDetail);
 
 app.use(express.static(path.join(__dirname, "../frontend/build")));
 

@@ -41,7 +41,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2024 Agilelabs AI. All Rights Reserved.</p>
+        <p>&copy; 2025 Agilelabs AI. All Rights Reserved.</p>
       </div>
     </footer>
   );
